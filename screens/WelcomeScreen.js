@@ -52,9 +52,18 @@ export default class WelcomeScreen extends React.Component{
         });
       }
     }
-userLogin = ()=>{
-
-}
+    userLogin = (emailId, password)=>{
+      firebase.auth().signInWithEmailAndPassword(emailId, password)
+      .then(()=>{
+        this.props.navigation.navigate('ListScreen')
+        
+      })
+      .catch((error)=> {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        return Alert.alert(errorMessage)
+      })
+    }
 showModal = ()=>{
     return(
       <Modal
@@ -200,8 +209,8 @@ render(){
 {this.showModal()}
             <View style= {styles.profileContainer}>
     <Image
-            source = {require("../assets/disability.png")}
-            style = {{width:120,height:120}}
+            source = {require("../assets/disability1.png")}
+            style = {{width:200,height:180 ,marginTop:-30}}
             />
             </View>
             <Text style ={styles.title}>
@@ -255,11 +264,13 @@ const styles = StyleSheet.create({
       },
       title :{
         fontSize:50,
-        fontWeight:'300',
+        fontWeight:'bold',
         paddingBottom:30,
-        marginTop:60,
+      
         fontStyle:'italic',
-        padding:10 
+        padding:10,
+        paddingTop:60,
+        alignSelf:'center'
 
       },
       login:{
