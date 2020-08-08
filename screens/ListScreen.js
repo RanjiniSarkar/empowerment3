@@ -5,7 +5,9 @@ import {View, Text, StyleSheet,ImageBackground} from 'react-native';
  export default class ListScreen extends React.Component{
      render(){
          return(
-            <View>LIST SCREEN</View>
+            <ImageBackground source = {bg}
+            style = {{width:400, height: 400, marginTop:100 }}
+            ></ImageBackground>
          )
      }
  }

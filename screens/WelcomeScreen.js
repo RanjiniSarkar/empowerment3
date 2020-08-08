@@ -55,7 +55,7 @@ export default class WelcomeScreen extends React.Component{
     userLogin = (emailId, password)=>{
       firebase.auth().signInWithEmailAndPassword(emailId, password)
       .then(()=>{
-        this.props.navigation.navigate('ListScreen')
+        this.props.navigation.navigate('List')
         
       })
       .catch((error)=> {
@@ -207,10 +207,11 @@ render(){
 
 </View>
 {this.showModal()}
+<KeyboardAvoidingView style = {styles.KeyboardAvoidingView}>
             <View style= {styles.profileContainer}>
     <Image
             source = {require("../assets/disability1.png")}
-            style = {{width:200,height:180 ,marginTop:-30}}
+            style = {{width:200,height:180 ,marginTop:-140}}
             />
             </View>
             <Text style ={styles.title}>
@@ -219,6 +220,7 @@ render(){
             <View>
            <TextInput style = {styles.login}
            placeholder="email-id"
+           placeholderTextColor='#777676'
            keyboardType='email-address'
            onChangeText = {(text)=>{
                this.setState({
@@ -230,6 +232,7 @@ render(){
            <TextInput
            style= {styles.login}
            placeholder= 'password'
+           placeholderTextColor="#777676"
            secureTextEntry={true}
            onChangeText={(text)=>{
                this.setState({
@@ -250,6 +253,7 @@ render(){
                <Text style = {styles.buttonText}>SIGN UP</Text>
                </TouchableOpacity>
             </View>
+            </KeyboardAvoidingView>
         </View>
     )
 }
@@ -269,7 +273,7 @@ const styles = StyleSheet.create({
       
         fontStyle:'italic',
         padding:10,
-        paddingTop:60,
+        paddingTop:20,
         alignSelf:'center'
 
       },
@@ -283,7 +287,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         paddingLeft:10,
         borderRadius:30,
-        marginLeft:20
+        marginLeft:-30
 
       },
       button:{
@@ -293,7 +297,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         borderRadius:25,
-        marginLeft:50,
+        marginLeft:10,
         backgroundColor:"#373fdd",
         shadowColor: "#000",
         shadowOffset: {
