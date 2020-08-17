@@ -13,18 +13,32 @@ import DisabilityAndType from './screens/DisabilityAndType';
 import DisabilityInIndia from './screens/DisabilityInIndia';
 import Education from './screens/Education';
 import Events from './screens/Events';
-import ExpertConnect from './screens/ExpertConnect';
+import Connect from './screens/Expert Connect/Connect'
 import EmergencyConnect from './screens/EmergencyConnect';
 import SkillDevelopment from './screens/SkillDevelopment';
 import SocialSecurity from './screens/SocialSecurity';
 import Training from './screens/Training';
 import InspirationalStories from './screens/InspirationalStories'
+import{createStackNavigator} from 'react-navigation-stack'
+import ExpertConnect from './screens/Expert Connect/ExpertConnect'
+
 export default function App () {
   return(
   <AppContainer/>
 
   );
 }
+const AppStackNavigator = createStackNavigator({
+  Connect:{
+    screen:Connect
+  },
+  ExpertConnect:{
+    screen: ExpertConnect
+  }},
+  {  
+    initialRouteName: "Connect"  
+}  
+)
 
 const AppTabNavigator = createBottomTabNavigator({
   List:{
@@ -69,8 +83,8 @@ const AppTabNavigator = createBottomTabNavigator({
         drawerLabel: "Disability And Type wise encylopedia"
       }
     },
-    ExpertConnect:{
-      screen:ExpertConnect,
+    Connect:{
+      screen:Connect,
       navigationOptions:{
       
         drawerLabel: "Expert Connect"
@@ -143,6 +157,8 @@ const AppTabNavigator = createBottomTabNavigator({
   SplashScreen : {screen: SplashScreen},
   WelcomeScreen:{screen:WelcomeScreen},
   AppDrawNavigator : AppDrawerNavigator,
+  StackNavigator: AppStackNavigator,
+
   
 })
 const AppContainer = createAppContainer(switchNavigator)

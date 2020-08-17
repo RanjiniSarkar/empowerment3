@@ -15,8 +15,7 @@ export default class WelcomeScreen extends React.Component{
             lastName: ' ',
             address: ' ',
             contact: ' ',
-            city: ' ',
-            state: ' ',
+            
             isModalVisible: ' '      }
     }
     userSignUp = (emailId, password,confirmPassword) =>{
@@ -32,8 +31,7 @@ export default class WelcomeScreen extends React.Component{
             'contact':this.state.contact,
             'email_id':this.state.emailId,
             'address':this.state.address,
-            'city': this.state.city,
-            'state': this.state.state,
+    
 
           })
           return  Alert.alert(
@@ -118,23 +116,7 @@ showModal = ()=>{
           })
         }}  
         />
-         <TextInput
-          style={styles.formTextInput}
-          placeholder ={"City"}
-           onChangeText={(text)=>{
-            this.setState({
-              city: text
-            })
-          }}/>
-           <TextInput
-          style={styles.formTextInput}
-          placeholder ={"State"}
-    
-          onChangeText={(text)=>{
-            this.setState({
-              state: text
-            })
-          }}/>
+         
         <TextInput
         style = {styles.formTextInput}
         placeholder={'Email'}
@@ -340,7 +322,7 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderRadius:10,
         borderWidth:1,
-        marginTop:20,
+        marginTop:10,
         padding:10
       },
       registerButton:{
@@ -350,7 +332,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         borderWidth:1,
         borderRadius:10,
-        marginTop:30,
+        marginTop:20,
         borderColor:'#18db93'
       },
       registerButtonText:{

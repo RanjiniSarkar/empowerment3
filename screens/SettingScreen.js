@@ -3,7 +3,7 @@ import {View,Text, KeyboardAvoidingView,TextInput,StyleSheet,ScrollView,Touchabl
 
 import db from '../config'
 import firebase from 'firebase'
-
+import MyHeader from '../components/MyHeader'
 
 export default class SettingScreen extends Component{
   constructor(){
@@ -18,51 +18,46 @@ export default class SettingScreen extends Component{
     }
   }
 
- getData(){
-  var user = firebase.auth().currentUser;
-  var email= user.email
+  getUserDetails(){
+    var user = firebase.auth().currentUser;
+    var email= user.email
+  
+   db.collection('users').where('email_id','==',email).get()
+    .then(snapshot => {
+      snapshot.forEach(doc => {
+         var data = doc.data()
+         this.setState({
+           emailId: data.email_id,
+           firstName:data.first_name,
+           lastName:data.last_name,
+           address:data.address,
+           contact:data.contact,
+           docId:doc.id
+         })
+      });
+    })
+  
+  }
 
- db.collection('users').where('email_id','==',email).get()
-  .then(snapshot => {
-    snapshot.forEach(doc => {
-       var data = doc.data()
-       this.setState({
-         emailId: data.email_id,
-         firstName:data.first_name,
-         lastName:data.last_name,
-         address:data.address,
-         contact:data.contact,
-         docId:doc.id
-       })
-    });
-  })
-
-}
-
- updateData(){
-
-  db.collection('users').doc(this.state.docId)
-    .update({
+  updateUserDetails = () => {
+    db.collection("users").doc(this.state.docId).update({
       first_name: this.state.firstName,
       last_name: this.state.lastName,
-      address:this.state.address,
-      contact:this.state.contact,
-      city:this.state.city,
-      state:this.state.state
-    })
-}
+      address: this.state.address,
+      contact: this.state.contact,
+    });
 
-componentDidMount(){
-  this.getData()
-}
+  }
+  componentDidMount() {
+    this.getUserDetails()
+  }
 
 
 
     render(){
         return(
-
-          <KeyboardAvoidingView style = {styles.KeyboardAvoidingView}>
                 <View style={{flex:1,width:'100%',alignItems: 'center'}}>
+                <MyHeader title = "Settings" navigation={this.props.navigation}/>
                  <TextInput
              style = {styles.formTextInput}
              placeholder={'First Name'}
@@ -104,23 +99,7 @@ componentDidMount(){
           })
         }}  
         />
-         <TextInput
-          style={styles.formTextInput}
-          placeholder ={"City"}
-           onChangeText={(text)=>{
-            this.setState({
-              city: text
-            })
-          }}/>
-           <TextInput
-          style={styles.formTextInput}
-          placeholder ={"State"}
-    
-          onChangeText={(text)=>{
-            this.setState({
-              state: text
-            })
-          }}/>
+         
         <TextInput
         style = {styles.formTextInput}
         placeholder={'Email'}
@@ -134,11 +113,10 @@ componentDidMount(){
        
         
                 <TouchableOpacity style={styles.button}
-                  onPress={()=>{this.updateData()}}>
+                  onPress={()=>{this.updateUserDetails()}}>
                   <Text style = {styles.buttonText}> SAVE </Text>
                 </TouchableOpacity>
                 </View>
-                </KeyboardAvoidingView>
 
        
 

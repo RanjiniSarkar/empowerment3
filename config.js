@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 require('@firebase/firestore')
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyDzLN6PBo2mMVL-3Ux08G-i16-Mfow5wUs",
   authDomain: "empowerment-d4586.firebaseapp.com",
   databaseURL: "https://empowerment-d4586.firebaseio.com",
@@ -12,4 +12,5 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
   export default firebase.firestore();
