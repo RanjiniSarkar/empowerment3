@@ -1,93 +1,24 @@
 import React,{Component} from 'react';
 import {View, Text,TouchableOpacity,ScrollView,Image,StyleSheet,Linking} from 'react-native';
 import {Card} from 'react-native-elements'
-import MyHeader from '../components/MyHeader'
-export default class SkillDevelopment extends React.Component{
+import MyHeader from '../../components/MyHeader'
+export default class MedicalConnect extends React.Component{
     render(){
 
         return(
             <ScrollView>
                 
                 <View style = {{flex:1}}>
-                      <MyHeader title = "SKILL DEVELOPMENT" navigation={this.props.navigation}/>
+                      <MyHeader title = 'MEDICAL CONNECT' navigation={this.props.navigation}/>
                       <View>
                       <Card style = {styles.card}>
                           <Card>
                      <TouchableOpacity onPress = {()=>{
-                         Linking.openURL("https://www.scpwd.in/                         ")
+                         this.props.navigation.navigate("EyeCare")
                      }}>
                               <Image
-                              source={require("../assets/skill/SKILL.png")}
-                              style = {{ width:220,
-                                height:150,
-                                
-                                alignSelf:'center'
-                            }}
-                              />
-    
-                          </TouchableOpacity>
-                          </Card>
-                          <Card>
-                              <Text style = {styles.text}>
-                        SKILL INDIA
-
-                              </Text>
-                          </Card>
-                      </Card>
-                      <Card style = {styles.card}>
-                          <Card>
-                     <TouchableOpacity onPress = {()=>{
-                Linking.openURL("https://nsdcindia.org/nos-listing/38                ")
-                     }}>
-                              <Image
-                              source={require("../assets/skill/NSDC.png")}
-                              style = {{ width:300,
-                                height:130,
-                                
-                                alignSelf:'center'
-                            }}
-                              />
-    
-                          </TouchableOpacity>
-                          </Card>
-                          <Card>
-                              <Text style = {styles.text}>
-                              NATIONAL SKILL DEVELOPMENT CORPORATION
-
-                              </Text>
-                          </Card>
-                      </Card>
-                      <Card style = {styles.card}>
-                          <Card>
-                     <TouchableOpacity onPress = {()=>{
-                        Linking.openURL("https://www.nationalskillsnetwork.in/skill-development-for-persons-with-disabilities/                        ")
-                     }}>
-                              <Image
-                              source={require("../assets/skill/NATIONAL.png")}
+                              source={require("../../assets/medical/EYE.png")}
                               style = {{ width:250,
-                                height:150,
-                                
-                                alignSelf:'center'
-                            }}
-                              />
-    
-                          </TouchableOpacity>
-                          </Card>
-                          <Card>
-                              <Text style = {styles.text}>
-                              NATIONAL SKILLS NETWORK
-
-                              </Text>
-                          </Card>
-                      </Card>
-                      <Card style = {styles.card}>
-                          <Card>
-                     <TouchableOpacity onPress = {()=>{
-                         Linking.openURL("https://www.ncbi.nlm.nih.gov/books/NBK310919/                         ")
-                     }}>
-                              <Image
-                              source={require("../assets/skill/NCBI.png")}
-                              style = {{ width:300,
                                 height:130,
                                 
                                 alignSelf:'center'
@@ -98,7 +29,7 @@ export default class SkillDevelopment extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                        NATIONAL CENTER FOR BIOTECHNOLOGY INFORMATION
+                              EYE CARE HOSPITALS IN INDIA
 
                               </Text>
                           </Card>
@@ -106,12 +37,12 @@ export default class SkillDevelopment extends React.Component{
                       <Card style = {styles.card}>
                           <Card>
                      <TouchableOpacity onPress = {()=>{
-                         Linking.openURL("http://trinayani.org/whom-to-call-for-a-job/                         ")
+                        Linking.openURL("https://drive.google.com/file/d/1uFv3TmCoQPNTNjAbBOc269B1MJ2whk3B/view?usp=sharing")
                      }}>
                               <Image
-                              source={require("../assets/skill/TRINAYANI.png")}
-                              style = {{ width:300,
-                                height:130,
+                              source={require("../../assets/medical/ORTHOPADIC.png")}
+                              style = {{ width:250,
+                                height:200,
                                 
                                 alignSelf:'center'
                             }}
@@ -121,12 +52,61 @@ export default class SkillDevelopment extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                        TRINAYANI
+                              ORTHOPADIC HOSPITALS IN INDIA
 
                               </Text>
                           </Card>
                       </Card>
-                     
+                      <Card style = {styles.card}>
+                          <Card>
+                     <TouchableOpacity onPress = {()=>{
+                         Linking.openURL("https://www.google.co.in/search?biw=1280&bih=529&q=best+mental+health+hospital+in+india&npsic=0&rflfq=1&rlha=0&rllag=19937009,81100799,803528&tbm=lcl&ved=2ahUKEwjxne7CuZ3rAhXczjgGHXxwANIQjGp6BAgOEE4&rldoc=1#rlfi=hd:;si:;mv:[[29.5834187,89.3467898],[11.9756748,71.886865]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:2                         ")
+                     }}>
+                              <Image
+                              source={require("../../assets/medical/PSYCHOLOGY.png")}
+                              style = {{ width:350,
+                                height:270,
+                                
+                                alignSelf:'center'
+                            }}
+                              />
+    
+                          </TouchableOpacity>
+                          </Card>
+                          <Card>
+                              <Text style = {styles.text}>
+                              PSYCHOLOGY CLINIC-CENTRES IN INDIA
+
+                              </Text>
+                          </Card>
+                      </Card>
+                      <Card style = {styles.card}>
+                          <Card>
+                     <TouchableOpacity onPress = {()=>{
+                      Linking.openURL("https://drive.google.com/file/d/1bqJxH5b-yKQqhpVedp3TwGTmZsCK-Z1Z/view?usp=sharing")
+                     }}>
+                              <Image
+                              source={require("../../assets/medical/SPEECH.png")}
+                              style = {{ width:300,
+                                height:300,
+                                
+                                alignSelf:'center'
+                            }}
+                              />
+    
+                          </TouchableOpacity>
+                          </Card>
+                          <Card>
+                              <Text style = {styles.text}>
+                              SPEECH AND HEARING THERAPY IN INDIA
+
+                              </Text>
+                          </Card>
+                      </Card>
+     
+                          
+            
+                      
                 </View>
                 </View>
             </ScrollView>

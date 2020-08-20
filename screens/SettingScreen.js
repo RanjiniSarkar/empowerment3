@@ -4,6 +4,7 @@ import {View,Text, KeyboardAvoidingView,TextInput,StyleSheet,ScrollView,Touchabl
 import db from '../config'
 import firebase from 'firebase'
 import MyHeader from '../components/MyHeader'
+import {RFValue} from 'react-native-responsive-fontsize'
 
 export default class SettingScreen extends Component{
   constructor(){
@@ -39,7 +40,7 @@ export default class SettingScreen extends Component{
   
   }
 
-  updateUserDetails = () => {
+  updateData = () => {
     db.collection("users").doc(this.state.docId).update({
       first_name: this.state.firstName,
       last_name: this.state.lastName,
@@ -57,65 +58,89 @@ export default class SettingScreen extends Component{
     render(){
         return(
                 <View style={{flex:1,width:'100%',alignItems: 'center'}}>
-                <MyHeader title = "Settings" navigation={this.props.navigation}/>
-                 <TextInput
-             style = {styles.formTextInput}
-             placeholder={'First Name'}
-            
-             onChangeText={(text)=>{
-               this.setState({
-                 firstName: text
-               })
-             }}
-          />
-          <TextInput
-        style = {styles.formTextInput}
-        placeholder={'Last Name'}
-    
-        onChangeText={(text)=>{
-          this.setState({
-            lastName:text
-          })
-        }}  
-        />
-        <TextInput
-        style = {styles.formTextInput}
-        placeholder={'Contact'}
-        maxLength={10}
-        keyboardType={'numeric'}
-        onChangeText={(text)=>{
-          this.setState({
-            contact:text
-          })
-        }}  
-        />
-        <TextInput
-        style = {styles.formTextInput}
-        placeholder={'Address'}
-        multiline = {true}
-        onChangeText={(text)=>{
-          this.setState({
-            address:text
-          })
-        }}  
-        />
-         
-        <TextInput
-        style = {styles.formTextInput}
-        placeholder={'Email'}
-        keyboardType={'email-address'}
-        onChangeText={(text)=>{
-          this.setState({
-            emailId:text
-          })
-        }}  
-        />
-       
-        
+                
+                <View style={{flex:1,width:'100%',alignItems: 'center'}}>
+                <TextInput
+                  style={styles.formTextInput}
+                  placeholder ={"First Name"}
+                  maxLength ={8}
+                  containerStyle={{
+                    marginBottom:RFValue(25),
+                    marginTop:RFValue(0)
+                  }}
+                  onChangeText={(text)=>{
+                    this.setState({
+                      firstName: text
+                    })
+                  }}
+                  value ={this.state.firstName}
+                />
+                <TextInput
+                  style={styles.formTextInput}
+                  placeholder ={"Last Name"}
+                  maxLength ={8}
+                  containerStyle={{
+                    marginBottom:RFValue(25),
+                    
+                  }}
+                  onChangeText={(text)=>{
+                    this.setState({
+                      lastName: text
+                    })
+                  }}
+                    value ={this.state.lastName}
+                />
+                <TextInput
+                  style={styles.formTextInput}
+                  placeholder ={"Contact"}
+                  maxLength ={10}
+                  containerStyle={{
+                    marginBottom:RFValue(25),
+                  
+                  }}
+                  keyboardType={'numeric'}
+                  onChangeText={(text)=>{
+                    this.setState({
+                      contact: text
+                    })
+                  }}
+                    value ={this.state.contact}
+                />
+                <TextInput
+                  style={styles.formTextInput}
+                  placeholder ={"Address"}
+                  multiline = {true}
+                  containerStyle={{
+                    marginBottom:RFValue(25),
+                    
+                  }}
+                  onChangeText={(text)=>{
+                    this.setState({
+                      address: text
+                    })
+                  }}
+                    value ={this.state.address}
+                />
+                <TextInput
+                  style={styles.formTextInput}
+                  placeholder ={"Email"}
+                  keyboardType ={'email-address'}
+                  containerStyle={{
+                    marginBottom:RFValue(25),
+                  
+                  }}
+                  onChangeText={(text)=>{
+                    this.setState({
+                      emailId: text
+                    })
+                  }}
+                    value ={this.state.emailId}
+                />
                 <TouchableOpacity style={styles.button}
-                  onPress={()=>{this.updateUserDetails()}}>
-                  <Text style = {styles.buttonText}> SAVE </Text>
+                  onPress={()=>{this.updateData()}}>
+                  <Text style={{fontSize:25, color:"white"}}> SAVE </Text>
                 </TouchableOpacity>
+                </View>
                 </View>
 
        

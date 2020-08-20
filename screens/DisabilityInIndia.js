@@ -2,13 +2,14 @@ import React,{Component} from 'react';
 import {View, Text, TouchableOpacity,ScrollView,Linking,StyleSheet,Image} from 'react-native';
 import{Card} from 'react-native-elements'
 import MyHeader from '../components/MyHeader'
+import {RFValue }from "react-native-responsive-fontsize"
 export default class DisabilityInIndia extends React.Component{
     render(){
 
         return(
             <ScrollView>
                   <View style = {{flex:1}}>
-                      <MyHeader title = 'Disability In India'/>
+                      <MyHeader title = 'Disability In India' navigation={this.props.navigation}/>
                       <View>
                       <Card style = {styles.card}>
                           <Card>
@@ -17,9 +18,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/1.png")}
-                              style = {{ width:164,
-                                height:300,
-                                marginTop:30,
+                              style = {{ width:RFValue(164),
+                                height:RFValue(300),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -42,9 +43,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/2.png")}
-                              style = {{ width:190,
-                                height:330,
-                                marginTop:30,
+                              style = {{ width:RFValue(190),
+                                height:RFValue(330),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -69,9 +70,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/3.png")}
-                              style = {{ width:303,
-                                height:191,
-                                marginTop:30,
+                              style = {{ width:RFValue(303),
+                                height:RFValue(191),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -95,9 +96,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/4.png")}
-                              style = {{ width:310,
-                                height:131,
-                                marginTop:30,
+                              style = {{ width:RFValue(310),
+                                height:RFValue(131),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -121,9 +122,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/5.png")}
-                              style = {{ width:315,
-                                height:220,
-                                marginTop:30,
+                              style = {{ width:RFValue(315),
+                                height:RFValue(220),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -147,9 +148,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/6.png")}
-                              style = {{ width:196,
-                                height:209,
-                                marginTop:30,
+                              style = {{ width:RFValue(196),
+                                height:RFValue(209),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />
@@ -174,9 +175,9 @@ export default class DisabilityInIndia extends React.Component{
                      }}>
                               <Image
                               source={require("../assets/disabilityInIndia/7.png")}
-                              style = {{ width:181,
-                                height:220,
-                                marginTop:30,
+                              style = {{ width:RFValue(181),
+                                height:RFValue(220),
+                                marginTop:RFValue(30),
                                 alignSelf:'center'
                             }}
                               />

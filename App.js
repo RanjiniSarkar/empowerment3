@@ -11,17 +11,23 @@ import SettingScreen from './screens/SettingScreen';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import DisabilityAndType from './screens/DisabilityAndType';
 import DisabilityInIndia from './screens/DisabilityInIndia';
-import Education from './screens/Education';
+import Education from './screens/Education/Education';
 import Events from './screens/Events';
 import Connect from './screens/Expert Connect/Connect'
-import EmergencyConnect from './screens/EmergencyConnect';
+import MedicalConnect from './screens/MedicalConnect/EmergencyConnect';
 import SkillDevelopment from './screens/SkillDevelopment';
 import SocialSecurity from './screens/SocialSecurity';
 import Training from './screens/Training';
-import InspirationalStories from './screens/InspirationalStories'
 import{createStackNavigator} from 'react-navigation-stack'
 import ExpertConnect from './screens/Expert Connect/ExpertConnect'
-
+import PhysioConnect from './screens/Expert Connect/Physio'
+import Psycologist from './screens/Expert Connect/Psyco'
+import Psychiatric from './screens/Expert Connect/Psychiatric'
+import Appliances from './screens/Expert Connect/Appliances'
+import EyeCare from './screens/MedicalConnect/EyeCare'
+import Special from './screens/Education/Special'
+import Blog from './screens/Blog'
+import Profile from './screens/Profile';
 export default function App () {
   return(
   <AppContainer/>
@@ -29,16 +35,44 @@ export default function App () {
   );
 }
 const AppStackNavigator = createStackNavigator({
+  
   Connect:{
     screen:Connect
   },
   ExpertConnect:{
     screen: ExpertConnect
-  }},
-  {  
-    initialRouteName: "Connect"  
-}  
+  },
+  PHYSIOTHERAPIST:{
+    screen : PhysioConnect
+  },
+PSYCOLOGIST:{
+  screen: Psycologist
+},
+PSYCHIATRIC:{
+  screen:Psychiatric
+},
+TRANSPLANTS:{
+screen:Appliances
+},
+MedicalConnect:{
+  screen:MedicalConnect
+},
+EyeCare:{
+  screen:EyeCare
+},
+Education:{
+  screen:Education
+},
+SpecialEducation:{
+screen:Special
+},
+
+},
+
+  
+
 )
+
 
 const AppTabNavigator = createBottomTabNavigator({
   List:{
@@ -56,19 +90,19 @@ const AppTabNavigator = createBottomTabNavigator({
               tabBarLabel: "Search Screen"
           }
       },
+      Blog:{
+        screen:Blog,
+        navigationOptions:{
+          tabBarLabel:"Blog Screen"
+        }
+      }
       
   })
    const AppDrawerNavigator = createDrawerNavigator({
     Home:{
         screen:AppTabNavigator,
        },
-    Settings:{
-      screen:SettingScreen,
-      navigationOptions:{
-      
-        drawerLabel: "Settings"
-      }
-    },
+    
     DisabilityInIndia:{
       screen:DisabilityInIndia,
       navigationOptions:{
@@ -91,7 +125,7 @@ const AppTabNavigator = createBottomTabNavigator({
       }
     },
     EmergencyConnect:{
-      screen:EmergencyConnect,
+      screen:MedicalConnect,
       navigationOptions:{
       
         drawerLabel: "Emergency Connect"
@@ -126,7 +160,12 @@ const AppTabNavigator = createBottomTabNavigator({
       }
     },
     
-    
+    Profile:{
+      screen:Profile,
+      navigationOptions:{
+        drawerLabel:"profile"
+      }
+    },
    
     SocialSecurity:{
       screen:SocialSecurity,
@@ -135,14 +174,8 @@ const AppTabNavigator = createBottomTabNavigator({
         drawerLabel: "Social Security"
       }
     },
-    InspirationalStories:{
-      screen:InspirationalStories,
-      navigationOptions:{
-      
-        drawerLabel: "Inspirational Stories"
-      }
-    },
-    
+   
+        
     
 },
 {
@@ -158,6 +191,7 @@ const AppTabNavigator = createBottomTabNavigator({
   WelcomeScreen:{screen:WelcomeScreen},
   AppDrawNavigator : AppDrawerNavigator,
   StackNavigator: AppStackNavigator,
+ 
 
   
 })

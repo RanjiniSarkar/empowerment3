@@ -2,13 +2,14 @@ import React,{Component} from 'react';
 import {View, Text, TouchableOpacity, Image,StyleSheet,ScrollView,Linking} from 'react-native';
 import MyHeader from '../components/MyHeader'
 import {Card} from 'react-native-elements';
+import {RFValue} from 'react-native-responsive-fontsize'
 export default class DisabilityAndType extends React.Component{
     render(){
 
         return(
             <ScrollView>
             <View style={{flex:1}}>
-        <MyHeader title="Disability Encyclopedia"/>
+        <MyHeader title="Disability Encyclopedia" navigation={this.props.navigation}/>
         
             <View>
                 <Card style = {styles.card}>
@@ -412,26 +413,26 @@ export default class DisabilityAndType extends React.Component{
     }}
     const styles = StyleSheet.create({
         image:{
-            width:120,
-            height:90,
-            marginTop:30,
+            width:RFValue(120),
+            height:RFValue(90),
+            marginTop:RFValue(30),
             alignSelf:'center'
         },
         text:{
-            fontSize:20,
-            marginTop:10,
-            marginLeft:20,
+            fontSize:RFValue(20),
+            marginTop:RFValue(10),
+            marginLeft:RFValue(20),
             textAlign:"center",
 
         },
         text1:{
-            marginLeft:240,
-            fontSize:20,
-            marginTop:-30
+            marginLeft:RFValue(240),
+            fontSize:RFValue(20),
+            marginTop:RFValue(-30)
         },
         card:{
-            padding:10,
-            margin:10,
+            padding:RFValue(10),
+            margin:RFValue(10),
         }
 
     })
