@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {View, Text, TouchableOpacity, Image,StyleSheet,ScrollView,Linking} from 'react-native';
 import MyHeader from '../components/MyHeader'
-import {Card} from 'react-native-elements';
+import {Card,Icon,Header} from 'react-native-elements';
 import {RFValue} from 'react-native-responsive-fontsize'
 export default class DisabilityAndType extends React.Component{
     render(){
@@ -9,7 +9,12 @@ export default class DisabilityAndType extends React.Component{
         return(
             <ScrollView>
             <View style={{flex:1}}>
-        <MyHeader title="Disability Encyclopedia" navigation={this.props.navigation}/>
+         <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "Disability Encylopedia", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
         
             <View>
                 <Card style = {styles.card}>

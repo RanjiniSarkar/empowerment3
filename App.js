@@ -28,6 +28,8 @@ import EyeCare from './screens/MedicalConnect/EyeCare'
 import Special from './screens/Education/Special'
 import Blog from './screens/Blog'
 import Profile from './screens/Profile';
+import{Icon} from 'react-native-elements';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'; 
 export default function App () {
   return(
   <AppContainer/>
@@ -69,7 +71,6 @@ screen:Special
 
 },
 
-  
 
 )
 
@@ -78,7 +79,7 @@ const AppTabNavigator = createBottomTabNavigator({
   List:{
           screen:ListScreen,
           navigationOptions: {
-              
+            tabBarIcon:<FontAwesome name="home" size={24} color="black" />,
               tabBarLabel: "List Screen"
           },
       
@@ -86,14 +87,15 @@ const AppTabNavigator = createBottomTabNavigator({
       Search:{
           screen:SearchScreen,
           navigationOptions: {
-                         
-              tabBarLabel: "Search Screen"
+                  tabBarIcon:<FontAwesome name="comments" size={24} color="black" />,       
+              tabBarLabel: "View Comments"
           }
       },
       Blog:{
         screen:Blog,
         navigationOptions:{
-          tabBarLabel:"Blog Screen"
+          tabBarLabel:"Blog Screen",
+          tabBarIcon:<FontAwesome5 name="blog" size={24} color="black" />
         }
       }
       
@@ -101,77 +103,85 @@ const AppTabNavigator = createBottomTabNavigator({
    const AppDrawerNavigator = createDrawerNavigator({
     Home:{
         screen:AppTabNavigator,
+        navigationOptions:{
+          drawerIcon:<FontAwesome name="home" size={24} color="black" />
+        }
        },
+       Profile:{
+        screen:Profile,
+        navigationOptions:{
+          drawerLabel:"Profile",
+          drawerIcon:<FontAwesome name="address-book" size={24} color="black" />
+        }
+      },
     
     DisabilityInIndia:{
       screen:DisabilityInIndia,
       navigationOptions:{
-      
-        drawerLabel: "Disability in India"
+    
+        drawerLabel: "Disability in India",
+        drawerIcon:<FontAwesome name="wheelchair" size={24} color="black" />
       }
     },
     DisabilityAndType:{
       screen:DisabilityAndType,
       navigationOptions:{
-      
-        drawerLabel: "Disability And Type wise encylopedia"
-      }
+   
+        drawerLabel: "Disability Encylopedia",
+        drawerIcon:<FontAwesome name="wheelchair" size={24} color="black" />      }
     },
     Connect:{
       screen:Connect,
       navigationOptions:{
-      
+        
+        drawerIcon:<FontAwesome name="handshake-o" size={24} color="black" />,
         drawerLabel: "Expert Connect"
       }
     },
     EmergencyConnect:{
       screen:MedicalConnect,
       navigationOptions:{
-      
+        drawerIcon:<FontAwesome5 name="clinic-medical" size={24} color="black" />,
         drawerLabel: "Emergency Connect"
       }
     },
     Education:{
       screen:Education,
       navigationOptions:{
-      
+        drawerIcon:<FontAwesome5 name="book-open" size={24} color="black" />,
         drawerLabel: "Education"
       }
     },
     Training:{
       screen:Training,
       navigationOptions:{
-      
+        drawerIcon:<FontAwesome5 name="chalkboard-teacher" size={24} color="black" />,
         drawerLabel: "Training"
       }
     },
     SkillDevelopment:{
       screen:SkillDevelopment,
       navigationOptions:{
-      
+        drawerIcon:<FontAwesome5 name="chart-line" size={24} color="black" />,
         drawerLabel: "Skill Development"
+      }
+    },
+    
+    
+    
+   
+    SocialSecurity:{
+      screen:SocialSecurity,
+      navigationOptions:{
+        drawerIcon:<FontAwesome5 name="shield-alt" size={28} color="black" />,
+        drawerLabel: "Social Security"
       }
     },
     Events:{
       screen:Events,
       navigationOptions:{
-      
+        drawerIcon:<FontAwesome name="calendar" size={24} color="black" />,
         drawerLabel: "Events"
-      }
-    },
-    
-    Profile:{
-      screen:Profile,
-      navigationOptions:{
-        drawerLabel:"profile"
-      }
-    },
-   
-    SocialSecurity:{
-      screen:SocialSecurity,
-      navigationOptions:{
-      
-        drawerLabel: "Social Security"
       }
     },
    

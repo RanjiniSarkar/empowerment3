@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View, Text,TouchableOpacity,ScrollView,Image,StyleSheet,Linking} from 'react-native';
-import {Card} from 'react-native-elements'
+import {Card,Icon,Header} from 'react-native-elements'
 import MyHeader from '../components/MyHeader'
 import {RFValue} from 'react-native-responsive-fontsize'
 export default class Events extends React.Component{
@@ -10,7 +10,12 @@ export default class Events extends React.Component{
             <ScrollView>
                 
                 <View style = {{flex:1}}>
-                      <MyHeader title = "EVENTS" navigation={this.props.navigation}/>
+                <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "EVENTS", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
                       <View>
                       <Card style = {styles.card}>
                           <Card>

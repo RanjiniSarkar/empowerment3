@@ -9,9 +9,7 @@ export default class Psychiatric extends React.Component{
     render(){
         return(
             <ScrollView>
-            <MyHeader title='PSYCHIATRIC' navigation={this.props.navigation}/>
-
-
+           
        <View style={{flex:1}}>
 <Card>
 <ListItem

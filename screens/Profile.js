@@ -16,7 +16,7 @@ import firebase from "firebase";
 import db from "../config";
 import axios from "axios";
 import {RFValue} from 'react-native-responsive-fontsize'
-import {Icon } from 'react-native-elements'
+import {Icon, Header } from 'react-native-elements'
 import MyHeader from "../components/MyHeader"
 import SettingScreen from './SettingScreen'
 
@@ -94,7 +94,12 @@ export default class CustomSideBarMenu extends Component {
   render() {
     return (
       <ScrollView>
-          <MyHeader title="PROFILE" navigation={this.props.navigation}/>
+         <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "PROFILE", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
       <View style={{ flex: 1 }}>
         <View
           style={{

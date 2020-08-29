@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View, Text, TouchableOpacity,ScrollView,Linking,StyleSheet,Image} from 'react-native';
-import{Card} from 'react-native-elements'
+import{Card,Header,Icon} from 'react-native-elements'
 import MyHeader from '../components/MyHeader'
 import {RFValue }from "react-native-responsive-fontsize"
 export default class DisabilityInIndia extends React.Component{
@@ -9,7 +9,12 @@ export default class DisabilityInIndia extends React.Component{
         return(
             <ScrollView>
                   <View style = {{flex:1}}>
-                      <MyHeader title = 'Disability In India' navigation={this.props.navigation}/>
+                     <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "Disability in India", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
                       <View>
                       <Card style = {styles.card}>
                           <Card>
@@ -81,7 +86,7 @@ export default class DisabilityInIndia extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                             Act Name : REHABILITATION COUNCIL OF INDIA - RCI
+                        REHABILITATION COUNCIL OF INDIA - RCI
 
 
                               </Text>
@@ -107,7 +112,7 @@ export default class DisabilityInIndia extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                             Act Name : DISABILITY RIGHTS EDUCATION AND DEFENSE FUND - DREDF
+                    DISABILITY RIGHTS EDUCATION AND DEFENSE FUND - DREDF
 
 
                               </Text>
@@ -133,7 +138,7 @@ export default class DisabilityInIndia extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                             Act Name :DIVYANGJAN
+                             DIVYANGJAN
 
 
                               </Text>
@@ -159,7 +164,7 @@ export default class DisabilityInIndia extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                             Act Name :NATIONAL INSTITUTE FOR EMPOWERMENT OF PERSONS WITH MULTIPLE DISABILITIES
+                            NATIONAL INSTITUTE FOR EMPOWERMENT OF PERSONS WITH MULTIPLE DISABILITIES
 
 
 
@@ -186,7 +191,7 @@ export default class DisabilityInIndia extends React.Component{
                           </Card>
                           <Card>
                               <Text style = {styles.text}>
-                             Act Name :WE CAPABLE
+                             WE CAPABLE
 
 
 

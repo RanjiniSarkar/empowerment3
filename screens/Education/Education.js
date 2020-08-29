@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {View, Text, ScrollView, Linking,TouchableOpacity,StyleSheet, Image} from 'react-native';
 import MyHeader from '../../components/MyHeader'
-import { Card } from 'react-native-elements';
+import { Card,Header,Icon } from 'react-native-elements';
 
 
 export default class Education extends React.Component{
@@ -9,8 +9,12 @@ export default class Education extends React.Component{
 
         return(
             <ScrollView>
-            <MyHeader title='EDUCATION' navigation={this.props.navigation}/>
-      
+            <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "EDUCATION", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
                 <View>
                     <Card style={styles.card}>
                         <Card>

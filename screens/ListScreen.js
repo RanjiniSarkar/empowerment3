@@ -31,7 +31,8 @@ import {RFValue} from 'react-native-responsive-fontsize'
                      Linking.openURL("https://drive.google.com/file/d/1XR_OZBTDvro12s92Xt4znj7IsKymh-wA/view?usp=sharing")
                     }}
                     >
-                        <Text style={{textAlign:'center',fontSize:20,fontWeight:'bold',color:'white'}}>VIEW CALENDAR</Text>
+        <Text style={{textAlign:'center',fontSize:30,fontWeight:'bold',color:'white',}}>
+            VIEW </Text>
                     </TouchableOpacity>
                  </View>
             </ScrollView>

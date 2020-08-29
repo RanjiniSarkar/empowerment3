@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View, Text, ScrollView, TouchableOpacity,Linking, StyleSheet} from 'react-native'
-import{Card,ListItem} from 'react-native-elements'
+import{Card,ListItem,Header,Icon} from 'react-native-elements'
 import MyHeader from '../../components/MyHeader'
 export default class PhysioConnect extends React.Component{
 
@@ -9,9 +9,7 @@ export default class PhysioConnect extends React.Component{
     render(){
         return(
             <ScrollView>
-            <MyHeader title='PHYSIOTHERAPY' navigation={this.props.navigation}/>
-
-
+         
        <View style={{flex:1}}>
 <Card>
 <ListItem

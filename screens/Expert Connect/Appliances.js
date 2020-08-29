@@ -9,9 +9,7 @@ export default class Appliances extends React.Component{
     render(){
         return(
             <ScrollView>
-            <MyHeader title='APPLIANCES AND TRANSPLANTS' navigation={this.props.navigation}/>
-
-
+          
        <View style={{flex:1}}>
 <Card>
 <ListItem

@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {View, Text,TouchableOpacity,ScrollView,Image,StyleSheet,Linking} from 'react-native';
-import {Card} from 'react-native-elements'
+import {Card,Icon,Header} from 'react-native-elements'
 import MyHeader from '../components/MyHeader'
 export default class SocialSecurity extends React.Component{
     render(){
@@ -9,7 +9,12 @@ export default class SocialSecurity extends React.Component{
             <ScrollView>
                 
                 <View style = {{flex:1}}>
-                      <MyHeader title = "SOCIAL SECURITY" navigation={this.props.navigation}/>
+                <Header
+          leftComponent={<Icon name='arrow-back' type='MaterialIcons' color='white'  onPress={() => this.props.navigation.navigate("List")}/>}
+          centerComponent={{ text: "SOCIAL SECURITY", style: { color: '#ffffff', fontSize:20,fontWeight:"bold", } }}
+         
+          backgroundColor = "#32867d"
+        />
                       <View>
                       <Card style = {styles.card}>
                           <Card>

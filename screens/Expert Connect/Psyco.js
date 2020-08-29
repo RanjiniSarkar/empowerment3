@@ -9,8 +9,7 @@ export default class Psycologist extends React.Component{
     render(){
         return(
             <ScrollView>
-            <MyHeader title='PSYCHOLOGIST' navigation={this.props.navigation}/>
-
+          
 
        <View style={{flex:1}}>
 <Card>
