@@ -74,8 +74,17 @@ render(){
         <ScrollView>
         <View style = {{flex:1}}>
         <Image 
-        source = {require('../../assets/expertConnect.png')}
-        style = {{width:150, height:150, alignSelf:'center'}}
+        source = {require('../../assets/expert/BODHIPITH.png')}
+        style = {{width:200, height:200, alignSelf:'center',borderRadius:50,
+        shadowColor: "#000",
+        shadowOffset: {
+           width: 0,
+           height: 8,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 10.32,
+        elevation: 16,
+        }}
         />
         <Card>
         <Card>

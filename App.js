@@ -80,7 +80,7 @@ const AppTabNavigator = createBottomTabNavigator({
           screen:ListScreen,
           navigationOptions: {
             tabBarIcon:<FontAwesome name="home" size={24} color="black" />,
-              tabBarLabel: "List Screen"
+              tabBarLabel: "Home Screen"
           },
       
       },

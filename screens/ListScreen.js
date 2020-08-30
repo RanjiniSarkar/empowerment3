@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {View, Text, StyleSheet,ImageBackground,ScrollView ,Image,TouchableOpacity,Linking} from 'react-native';
 import MyHeader from '../components/MyHeader';
 import {RFValue} from 'react-native-responsive-fontsize'
+import {Card} from 'react-native-elements'
 
  export default class ListScreen extends React.Component{
      render(){
@@ -9,31 +10,32 @@ import {RFValue} from 'react-native-responsive-fontsize'
             <ScrollView>
                  <MyHeader title = "THE ACCESSIBLE INDIA" navigation={this.props.navigation}/>
                  <View style = {{flex:1}}>
-                     <Image source={require("../assets/LOGO.png")}
-                     style={{width:400, height:350, alignSelf:"center",marginTop:RFValue(30)}}
+                     <Image source={require("../assets/calendar.png")}
+                     style={{width:430, height:350, alignSelf:"center",marginTop:RFValue(60)}}
                      />
+                     <Card>
+                                              <TouchableOpacity 
+                     onPress={()=>{
+                         Linking.openURL("https://www.disabilitytalent.org/single-post/2019/12/31/2020-Diversity-Inclusion-Disability-Awareness-2020Calendar                         ")
+                     }}
+                     >
+                         <Image source={require("../assets/event.png")}
+                         style={{width:350, height:320,marginTop:RFValue(40), marginLeft:RFValue(5)}}
+                         />
+                     </TouchableOpacity>
+                     </Card>
+                     <Card>
                      <TouchableOpacity 
-                 style={{ width:200,
-                    height:80,
-                    justifyContent:'center',
-                    alignItems:'center',
-                    alignSelf:"center",
-                    backgroundColor:"#32867d",
-                    shadowColor: "#000",
-                    shadowOffset: {
-                       width: 0,
-                       height: 8,
-                    },
-                    shadowOpacity: 0.30,
-                    shadowRadius: 10.32,
-                    elevation: 16,}}
-                    onPress={()=>{
-                     Linking.openURL("https://drive.google.com/file/d/1XR_OZBTDvro12s92Xt4znj7IsKymh-wA/view?usp=sharing")
-                    }}
-                    >
-        <Text style={{textAlign:'center',fontSize:30,fontWeight:'bold',color:'white',}}>
-            VIEW </Text>
-                    </TouchableOpacity>
+                     onPress={()=>{
+                         Linking.openURL("https://specialolympicsbharat.org/calendar/ ")
+                     }}
+                     >
+                         <Image source={require("../assets/sports.png")}
+                         style={{width:350, height:400,marginTop:RFValue(40), marginLeft:RFValue(5)}}
+                         />
+                     </TouchableOpacity>
+                     </Card>
+                    
                  </View>
             </ScrollView>
          )
