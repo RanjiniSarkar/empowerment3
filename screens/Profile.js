@@ -159,13 +159,13 @@ var styles = StyleSheet.create({
         paddingBottom:30
       },
       logOutButton : {
-        width:300,
-        height:50,
+        width:RFValue(170),
+        height:RFValue(28),
         marginTop:40,
         justifyContent:'center',
         alignItems:'center',
         borderRadius:25,
-        marginLeft:60,
+        marginLeft:RFValue(250),
         backgroundColor:"#373fdd",
         shadowColor: "#000",
         shadowOffset: {

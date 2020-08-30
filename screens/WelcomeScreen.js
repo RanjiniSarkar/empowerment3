@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import{View,Text,TextInput,StyleSheet,TouchableOpacity,Alert,KeyboardAvoidingView,ScrollView,Modal,Image} from'react-native';
 import db from '../config';
 import firebase from 'firebase';
-
+import {RFValue} from 'react-native-responsive-fontsize'
 
 export default class WelcomeScreen extends React.Component{
     constructor (){
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
         marginTop:60
       },
       title :{
-        fontSize:50,
+        fontSize:RFValue(50),
         fontWeight:'bold',
         paddingBottom:30,
       

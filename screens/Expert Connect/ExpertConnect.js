@@ -24,9 +24,12 @@ export default class ExpertConnect extends React.Component{
   addRequest =()=>{
     
     db.collection('expert_connect').add({
-        
+        "first_name":this.state.firstName,
          "discussoion-status":'requested',
-       
+           "last_name":this.state.lastName,
+           "contact":this.state.contact,
+           "emailId":this.state.emailId,
+           "address":this.state.address,
         "topic":this.state.topic,
         "requested_date":this.state.date,
         "date"       : firebase.firestore.FieldValue.serverTimestamp(),
@@ -217,7 +220,9 @@ render(){
        <TouchableOpacity
                 style={styles.button}
                 onPress={()=>{ this.addRequest();
-                  this.updateData()                }}
+                  this.updateData()   
+                Alert.alert("Your appointment has been booked")
+                }}
                 >
             <Text>Request</Text>
               </TouchableOpacity>
